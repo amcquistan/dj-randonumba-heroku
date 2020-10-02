@@ -10,6 +10,12 @@
 {% endblock %}
 
 {% block extra_js %}
-<script type='text/javascript' src="{% static 'web/vuejs/vue.js' %}" ></script>
+
+{% if settings.ENV == settings.PRODUCTION %}
+  <script type='text/javascript' src="{% static 'web/vuejs/vue.min.js' %}" ></script>
+{% else %}
+  <script type='text/javascript' src="{% static 'web/vuejs/vue.js' %}" ></script>
+{% endif %}
+
 <script type='text/javascript' src="{% static 'web/randonumba.js' %}" ></script>
 {% endblock %}

@@ -28,9 +28,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '8gx!)xz4$)%_l$9svyucj(*k#k!qh-ff6$xj9o(3)zty(0k6l2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('ENV') == 'development'
+PRODUCTION = 'production'
+DEVELOPMENT = 'development'
+ENV = os.getenv('ENV', PRODUCTION)
+DEBUG = ENV == DEVELOPMENT
 
-ALLOWED_HOSTS = ['murmuring-chamber-40073.herokuapp.com']
+
+
+ALLOWED_HOSTS = ['murmuring-chamber-40073.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -75,6 +80,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'web.context_processor.settings'
             ],
         },
     },
