@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 # https://dev.to/denny64/how-to-move-your-postgres-database-from-heroku-to-aws-rds-detailed-guide-af0
 # https://medium.com/swlh/creating-a-postgresql-db-on-aws-and-connecting-it-to-heroku-django-app-29603df20c2a
 
+import os
 import dj_database_url
 from pathlib import Path
 
@@ -27,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '8gx!)xz4$)%_l$9svyucj(*k#k!qh-ff6$xj9o(3)zty(0k6l2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv('ENV') == 'development'
 
 ALLOWED_HOSTS = ['murmuring-chamber-40073.herokuapp.com']
 
