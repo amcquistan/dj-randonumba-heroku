@@ -29,7 +29,7 @@ SECRET_KEY = '8gx!)xz4$)%_l$9svyucj(*k#k!qh-ff6$xj9o(3)zty(0k6l2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['murmuring-chamber-40073.herokuapp.com']
 
 
 # Application definition
