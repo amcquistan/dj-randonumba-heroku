@@ -1,0 +1,39 @@
+{% extends 'web/base.html' %}
+
+{% block main %}
+<h2 class='mb-5'>Sign Up</h2>
+
+<form action="{% url 'register' %}" method='POST'>
+  {% csrf_token %}
+  <div class="field">
+    <label class="label">Email</label>
+    <div class="control">
+      <input class="input" name='email'  type="email" placeholder="Username (email)">
+    </div>
+    <p class="help is-danger">{{ form.email.errors }}</p>
+  </div>
+
+  <div class="field">
+    <label class="label">Password</label>
+    <div class="control">
+      <input class="input" name='password1'  type="password" placeholder="Password">
+    </div>
+    <p class="help is-danger">{{ form.password2.errors }}</p>
+  </div>
+  
+  <div class="field">
+    <label class="label">Passwor Check</label>
+    <div class="control">
+      <input class="input" name='password2'  type="password" placeholder="Password">
+    </div>
+    <p class="help is-danger">{{ form.password2.errors }}</p>
+  </div>
+
+  <div class="field">
+    <div class="control">
+      <button class="button is-link">Login</button>
+    </div>
+  </div>
+</form>
+{% endblock %}
+

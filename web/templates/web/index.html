@@ -1,0 +1,15 @@
+{% extends 'web/base.html' %}
+{% load static %}
+
+{% block main %}
+<div id='numba-app'>
+  <numba-generator :numba="currentNumba" :quote="currentQuote" @generate="generateNumba"></numba-generator>
+  <numbas-list :numbas="numbas"></numbas-list>
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script type='text/javascript' src="{% static 'web/vuejs/vue.js' %}" ></script>
+<script type='text/javascript' src="{% static 'web/randonumba.js' %}" ></script>
+{% endblock %}

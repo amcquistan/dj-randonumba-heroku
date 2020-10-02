@@ -1,0 +1,29 @@
+{% extends 'web/base.html' %}
+
+{% block main %}
+<h2 class='mb-5'>Login</h2>
+
+<form action="{% url 'login' %}" method='POST'>
+  {% csrf_token %}
+  <div class="field">
+    <label class="label">Email</label>
+    <div class="control">
+      <input class="input" name='username'  type="text" placeholder="Username (email)">
+    </div>
+  </div>
+  
+  <div class="field">
+    <label class="label">Password</label>
+    <div class="control">
+      <input class="input" name='password'  type="password" placeholder="Password">
+    </div>
+  </div>
+  
+  <div class="field">
+    <div class="control">
+      <button class="button is-link">Login</button>
+    </div>
+  </div>
+</form>
+{% endblock %}
+

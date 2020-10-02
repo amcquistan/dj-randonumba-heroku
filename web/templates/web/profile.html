@@ -1,0 +1,28 @@
+{% extends 'web/base.html' %}
+
+{% block main %}
+<h2 class='mb-4'>Profile</h2>
+
+<div class='card mb-4'>
+  <div class='card-header'>
+    <div class='card-header-title'>Username</div>
+  </div>
+  <div class='card-content'>
+    {{ request.user.username }}
+  </div>
+</div>
+
+<div class='card'>
+  <div class='card-header'>
+    <div class='card-header-title'>Token</div>
+  </div>
+  <div class='card-content'>
+    {{ token.key }} 
+    <form action="{% url 'profile_generate_token' %}" method='POST' class='is-pulled-right'>
+      {% csrf_token %}
+      <button class='button is-primary'>Generate New Token</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
+

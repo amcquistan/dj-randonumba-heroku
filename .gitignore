@@ -1,0 +1,7 @@
+venv
+*.pyc
+staticfiles
+.env
+.DS_Store
+Pipfile
+Pipfile.lock
