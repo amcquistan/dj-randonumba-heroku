@@ -35,7 +35,7 @@ DEBUG = ENV == DEVELOPMENT
 
 
 
-ALLOWED_HOSTS = ['murmuring-chamber-40073.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['intense-headland-79519.herokuapp.com', 'localhost']
 
 
 # Application definition
