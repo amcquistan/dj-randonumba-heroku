@@ -2,6 +2,7 @@
 
 from django.conf import settings
 from django.db import migrations, models
+from django.contrib.postgres.operations import HStoreExtension 
 import django.db.models.deletion
 
 
@@ -14,6 +15,7 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
+        HStoreExtension(),
         migrations.CreateModel(
             name='RandoNumba',
             fields=[
